@@ -24,7 +24,6 @@ addbutton.addEventListener("click", ()=> {
   books.push(book);
   display();
 })
-
 // remove the books
 function removebook(id){
   books.splice(id, 1);
