@@ -1,4 +1,4 @@
-books=[];
+let books=[];
 const bookdiv=document.querySelector(".books-list");
 const newtitle=document.querySelector('.book-name');
 const newauthor=document.querySelector(".book-author");
@@ -12,7 +12,7 @@ function display(){
     listofbook.classList.add('book_div');
     listofbook.innerHTML = `<h4>${books[i].title}</h4>
         <h4>${books[i].author}</h4>
-        <button id=${i} class="rem-btn" >Remove</button><br> <br>`;
+        <button id=${i} class="rem-btn">Remove</button><br> <br>`;
     bookdiv.appendChild(listofbook);
   }
 }
@@ -27,19 +27,11 @@ addbutton.addEventListener("click", ()=> {
 // remove the books
 function removebook(id){
   books.splice(id, 1);
+  display();
 }
-const rembtn=document.querySelector('.rem-btn');
 // remove the books from list
-rembtn[0].addEventListener('click', (e) => {
-    filter(removebook(e.id));
-
+bookdiv.addEventListener('click', (e) => {
+  if (event.target.classList.contains('rem-btn')){
+    removebook(e.target.id);
+  }
 });
-
-console.log(rembtn);
-// display();
-// function addbook(){
-//   for
-//   bookdiv.innerHTML = `<h4>${books[i].book}</h4>
-//       <h4>${books[i].author}</h4>
-//       <button id=${i} class="rem-btn" >Remove</button><br> <br>`;
-// }
