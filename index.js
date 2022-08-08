@@ -6,7 +6,8 @@ const addbutton=document.querySelector(".add-book");
 
 class Books {
   constructer(){
-    books = [];
+    // books = [];
+   var  books= new Array();
   }
    //Add a book
    addup(obj) {
